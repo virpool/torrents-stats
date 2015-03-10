@@ -55,15 +55,17 @@ function nextIteration() {
     function next() {
         logger.debug('All workers are done');
 
-        pool.end(function (err) {
-            if (err) logger.error(err);
-            workers = pool = null;
+        torrentsService.flushBuffer(pool, function () {
+            pool.end(function (err) {
+                if (err) logger.error(err);
+                workers = pool = null;
 
-            var sleepTime = Number(nconf.get('app:sleepTime'));
-            if (sleepTime > 0) {
-                return setTimeout(nextIteration, sleepTime * 1000 * 60);
-            }
-            process.nextTick(nextIteration);
+                var sleepTime = Number(nconf.get('app:sleepTime'));
+                if (sleepTime > 0) {
+                    return setTimeout(nextIteration, sleepTime * 1000 * 60);
+                }
+                process.nextTick(nextIteration);
+            });
         });
     }
 }
