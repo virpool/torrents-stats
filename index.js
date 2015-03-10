@@ -23,7 +23,8 @@ function nextIteration() {
 
     var workersCount = Number(nconf.get('app:workers')),
         workersBusyCount = workersCount,
-        workers = [];
+        workers = [],
+        startTime = Date.now();
 
     var pool = Pool.create(workersCount,
                         nconf.get('database:host'),
@@ -59,6 +60,8 @@ function nextIteration() {
             pool.end(function (err) {
                 if (err) logger.error(err);
                 workers = pool = null;
+
+                logger.debug('Iteration time:', Math.floor((Date.now() - startTime) / 1000), 'seconds');
 
                 var sleepTime = Number(nconf.get('app:sleepTime'));
                 if (sleepTime > 0) {
