@@ -1,0 +1,23 @@
+{
+  "name": "torrent-daemon",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "dependencies": {
+    "async": "*",
+    "bittorrent-tracker": "^3.1.3",
+    "bunyan": "^1.3.4",
+    "colors": "^1.0.3",
+    "hjson": "^1.6.1",
+    "moment": "^2.9.0",
+    "mysql": "*",
+    "nconf": "*",
+    "parse-torrent": "^4.0.0"
+  },
+  "repository": "",
+  "author": ""
+}

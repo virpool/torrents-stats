@@ -1,0 +1,18 @@
+{
+    database: {
+        host: localhost
+        name: torrents
+        user: root
+        password: passwd101
+    }
+
+    app: {
+        workers: 5
+        sleepTime: 5 // in minutes, value <= 0 - execute without timeouts
+    }
+
+    logger: {
+        dir: null
+        level: debug
+    }
+}
