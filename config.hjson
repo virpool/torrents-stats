@@ -9,7 +9,7 @@
     app: {
         workers: 5
         sleepTime: 5 // in minutes, value <= 0 - execute without timeouts
-        defaultAnnounce: udp://62.210.188.77:2710
+        defaultAnnounce: http://bt.universehd.net/announce
     }
 
     logger: {
