@@ -4,12 +4,16 @@
         name: torrents
         user: root
         password: passwd101
+
+        torrentsTable: the_torrents
     }
 
     app: {
         workers: 5
         sleepTime: 5 // in minutes, value <= 0 - execute without timeouts
         defaultAnnounce: http://bt.universehd.net/announce
+
+        bufferLimitToExecute: 100 // size of buffer (count of torrents) for single UPDATE
     }
 
     logger: {
