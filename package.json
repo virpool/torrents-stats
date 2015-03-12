@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "async": "*",
-    "bittorrent-tracker": "^3.1.3",
+    "bittorrent-tracker": "git://github.com/viktordoe/bittorrent-tracker.git",
     "bunyan": "^1.3.4",
     "collections": "^1.2.1",
     "colors": "^1.0.3",
